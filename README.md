@@ -15,7 +15,20 @@ setContainerProperties('evidence', {
 	--whitelist = { 'money', 'driver_license', 'weaponlicense', 'lawyerpass', 'membership', 'id_card' } 
 })
 ```
+And go to ox_inventory/data/items.lua place
 
+
+```
+['evidence'] = {
+		label = 'Evidence Bag',
+		weight = 120,
+		stack = false,
+		consume = 0,
+		client = {
+			export = 'pitrs_evidence.openEvidence'
+		}
+	},
+```
 
 # Dependency
 - ESX
