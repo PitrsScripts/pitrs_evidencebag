@@ -4,7 +4,7 @@ local ox_inventory = exports.ox_inventory
 RegisterServerEvent('pitrs_evidence:openEvidence')
 AddEventHandler('pitrs_evidence:openEvidence', function(identifier)
 	if not registeredStashes[identifier] then
-        ox_inventory:RegisterStash('evidence_'..identifier, 'Důkazní Sáček', false)
+        ox_inventory:RegisterStash('evidence_'..identifier, 'Evidence Bag', false)
         registeredStashes[identifier] = true
     end
 end)
@@ -12,7 +12,7 @@ end)
 lib.callback.register('pitrs_evidence:getNewIdentifier', function(source, slot)
 	local newId = GenerateSerial()
 	ox_inventory:SetMetadata(source, slot, {identifier = newId})
-	ox_inventory:RegisterStash('evidence_'..newId, 'Důkazní Sáček', false)
+	ox_inventory:RegisterStash('evidence_'..newId, 'Evidence Bag', false)
 	registeredStashes[newId] = true
 	return newId
 end)
